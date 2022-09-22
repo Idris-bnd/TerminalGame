@@ -46,8 +46,13 @@ const TerminalGame = {
         this.listBase.append(liForInputText);
 
 
-        this.body.addEventListener('click', () => {
-            myInputText.focus()
+        this.body.addEventListener('click', (e) => {
+            console.log(e.target);
+            if (e.target.id === "userCode") {
+                e.target.focus()
+            }else{
+                myInputText.focus()
+            }
         })
 
         myInputText.addEventListener('keydown', (e) =>{
@@ -225,6 +230,8 @@ const TerminalGame = {
 
         const ulinformationLi = document.createElement('ul')
         ulinformationLi.classList.add('textBlock');
+
+        document.getElementById('boardDiv') ? document.getElementById('boardDiv').remove() : ""
 
         let errorCount = 0;
         let myInterval = setInterval(() => {

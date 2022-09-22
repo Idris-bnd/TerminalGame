@@ -115,10 +115,28 @@ const app = {
                     app.checkSuccess();
                   }, 300);
                 }
-                
                 break;
+                case "":
+                  // Increment
+                  index++;
+              
+                  // if still a line to interpret
+                  if (index < codeLines.length) {
+                    // Recall same method (=> make a loop)
+                    window.setTimeout(function() {
+                      app.codeLineLoop(codeLines, index);
+                    }, 300);
+                  } else {
+                    window.setTimeout(function() {
+                      app.checkSuccess();
+                    }, 300);
+                  }
+                  break;
       
         default:
+
+          TerminalGame.restartGame()
+
           break;
       }
   
@@ -129,18 +147,26 @@ const app = {
       const winPosition = document.querySelector('.cellEnd').children[0];
       const myTextArea = document.getElementById("userCode")
       myTextArea.value = "YOU WIN !!";
+      let arrayLine = app.codeLines.length
   
       if (winPosition.classList.contains('cellCurrent')) {
           const myBoardDiv = document.getElementById('boardDiv')
           setTimeout(() => {
-            if (app.codeLines.length === 3) {
+            app.codeLines.forEach((line) => {
+              if (line == "") {
+                arrayLine--;
+                console.log(arrayLine);
+              }
+            })
+            
+            console.log(app.codeLines);
+            if (arrayLine === 3) {
               myBoardDiv.remove()
               TerminalGame.secretLine()
               TerminalGame.winLine()
             }else{
               myBoardDiv.remove()
               TerminalGame.winLine()
-              console.log(app.codeLines.length);
             }
           },1500)
 
