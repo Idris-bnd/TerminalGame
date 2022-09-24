@@ -436,7 +436,7 @@ const TerminalGame = {
         informationLi1.classList.add('blueLine')
 
         const informationLi2 = document.createElement('li');
-        informationLi2.innerHTML = "secret line : it's just a link to the cutest cat you ever seen. <a href='https://i.pinimg.com/originals/9a/09/ed/9a09ed259baad06fb3d3e478d8100f12.jpg'> the link</a>";
+        informationLi2.innerHTML = "secret line : it's just a link to the cutest cat you ever seen. <a href='https://i.pinimg.com/originals/9a/09/ed/9a09ed259baad06fb3d3e478d8100f12.jpg' target='_blank'> the link</a>";
         informationLi2.classList.add('blueLine')
 
         ulinformationLi.append(informationLi1, informationLi2);
