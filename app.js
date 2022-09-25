@@ -415,7 +415,7 @@ const TerminalGame = {
         informationLi4.textContent = "However ! you probably need someone with other skills, maybe even me! What do you think ?";
 
         const informationLi5 = document.createElement('li');
-        informationLi5.innerHTML = "If so, contact me at this link :  <a href='http://IdrisBnd/portfolio/'>http://IdrisBnd/portfolio/</a> ";
+        informationLi5.innerHTML = "If so, contact me at this link :  <a href='https://idris-bnd.github.io/My-Portfolio-ReactApp/contact'>https://idris-bnd.github.io/My-Portfolio-ReactApp/contact</a> ";
 
         ulinformationLi.append(informationLi1, informationLi2, informationLi3, informationLi4, informationLi5);
 
